@@ -45,10 +45,35 @@ public class Main {
 
 /*REFLEXIÓN ESCRITA:
 
-El polimorfismo es clave para expandir el sistema de manejo de veículos. Usted trata distintas clases de
-veículos igual usando la clase Vehículo principal. El código del cliente, por ejemplo, el metodo procesarVeículos,
-no necesita saber detalles internos de cada uno. Añadir nuevos tipos de veículos, como una Motosicleta,
-no requiere cambiar el código viejo. Interfaces como Combustible y Mantenimiento aseguran comportamientos
-concretos. La herencia nos permite reusar código compartido. Está arquitectura simplifica el mantenimiento,
+Análisis del Código Base
+
+- Explicar cómo se utiliza la herencia en las clases `Automovil` y `Bicicleta`.
+1. La herencia y el polimorfismo definen la estructura. Automovil y Bicicleta extienden a Vehiculo.
+Ambas clases heredan los atributos marca, modelo, y anio. Es posible sobrescribir el método mostrarInfo().
+Las clases deben implementar obligatoriamente el método desplazar() debido a que es abstracto.
+
+- Identificar dónde se aplica el polimorfismo en el método `mover()` y `obtenerDetalles()`.
+2. El polimorfismo permite que el método desplazar() tenga una implementación única para cada subclase.
+Cada clase puede sobrescribir mostrarInfo() para añadir datos concretos.
+Se manejan objetos de distintos tipos de forma uniforme usando la referencia Vehiculo.
+
+- Describir el uso de la palabra clave `super` en el código y su propósito.
+3. El uso de super resulta esencial. Con super(marca, modelo, anio), se llama al constructor de la clase superior.
+Con super.mostrarInfo(), se ejecuta el método de la clase superior antes de añadir más detalles.
+ Esto reusa y extiende el código de la clase padre.
+
+- Explicar el rol de la interfaz `Combustible` y por qué solo `Automovil` la implementa.
+4. La interfaz Combustible establece un contrato para veículos que usan combustible.
+Solo Automovil la implementa; Bicicleta no requiere combustible. Esta interfaz asegura que los vehículos
+ motorizados tengan métodos para repostar y verificar el nivel.
+
+
+Reflexión Escrita
+
+El polimorfismo es algo muy importante para expandir el sistema de manejo de veículos. En el codigo tenemos  distintas clases de
+veículos igual usando la clase Vehículo principal. En el código del cliente, por ejemplo, el metodo procesarVeículos,
+no necesita saber detalles internos de cada uno para funcionar correctamente. Añadir nuevos tipos de veículos, como una Motosicleta o un carro,
+no requiere cambiar el código viejo. Interfaces como ep Combustible y Mantenimiento aseguran comportamientos
+concretos. La herencia nos permite reusar el código compartido. Está arquitectura simplifica el mantenimiento,
 reduce repetición de código y da flexibilidad al sistema para futuros ajustes.
 */
